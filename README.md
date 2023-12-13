@@ -6,17 +6,7 @@ This repository is a group project for QTM 347: Machine Learning at Emory Univer
 ## Data Collection
 Google Trends was collected through pytrends 4.9.2, which is an unofficial API for Google Trends. Google Trends provides daily search data for up to the last 90 days. For any longer periods, the data is only available weekly. Due to Google backend's rate limit, we were able to retrieve at most the weekly search volume over the past 5 years for 5 keywords at a time. The weekly Google Trends of a total of 98 keywords were collected over the past 5 years.
 
-The keyword list includes:
-['economics', 'debt', 'inflation', 'metals', 'sell', 'bonds', 'risk', 'car', 'leverage', 'color',
-'chance', 'unemployment', 'nasdaq', 'money', 'society', 'war', 'transaction', 'cash', 'economy',
-'stocks', 'forex', 'finance', 'fed', 'growth', 'culture', 'banking', 'markets', 'marriage', 'office',
-'stock market', 'revenue', 'house', 'dow jones', 'portfolio', 'fond', 'travel', 'ore', 'fine', 'religion',
-'gains', 'restaurant', 'consumption', 'loss', 'credit', 'default', 'crisis', 'hedge', 'headlines', 'cancer',
-'rich', 'trader', 'garden', 'housing', 'gain', 'return', 'tourism', 'investment', 'derivatives', 'oil',
-'politics', 'invest', 'food', 'crash', 'returns', 'greed', 'movie', 'health', 'nyse', 'rare earths', 'success',
-'water', 'short sell', 'consume', 'gold', 'bubble', 'energy', 'lifestyle', 'home', 'freedom', 'world',
-'opportunity', 'happy', 'dividend', 'arts', 'present', 'labor', 'environment', 'buy', 'financial markets',
-'fun', 'short selling', 'earnings', 'holiday', 'profit', 'kitchen', 'train', 'ring', 'conflict']
+![keyword_wordcloud](https://github.com/GeniusY12138/LSTM-Transformer/assets/110353222/418d1629-8b18-422e-aa6e-f0e57d0b04ac)
 
 Stock volatility is measured through the Chicago Board Options Exchange's CBOE Volatility Index (VIX), a popular measure of the stock market's expectation of volatility based on S&P 500 index options. We also calculated the volatility based on the following equations (Garman, 1980):
 
