@@ -1,7 +1,7 @@
 # Stock Volatility Prediction with Google Search Trends
 
 ## Overview
-This repository is a group project for QTM 347: Machine Learning at Emory University, as inspired by Dr. Ruoxuan Xiong's 2015 paper "Deep Learning Stock Volatility with Google Domestic Trends". We present a prediction framework for stock market volatility, specifically on the Volatility Index (VIX). Our analysis is based on 98 Google Search trends (Preis, 2013), to capture the collective sentiment and interest of market participants. The models employed include Ordinary Least Squares (OLS), Partial Least Squares (PLS), Ridge Regression, Lasso Regression, and Long Short-Term Memory (LSTM) networks. 
+This repository is a group project for QTM 347: Machine Learning at Emory University, as inspired by Dr. Ruoxuan Xiong's 2015 paper "Deep Learning Stock Volatility with Google Domestic Trends." We present a prediction framework for stock market volatility, specifically on the Volatility Index (VIX). Our analysis is based on 98 Google Search trends (Preis, 2013), to capture the collective sentiment and interest of market participants. The models employed include Ordinary Least Squares (OLS), Partial Least Squares (PLS), Ridge Regression, Lasso Regression, and Long Short-Term Memory (LSTM) networks. 
 
 ## Data Collection
 Google Trends was collected through pytrends 4.9.2, which is an unofficial API for Google Trends. Google Trends provides daily search data for up to the last 90 days. For any longer periods, the data is only available weekly. Due to Google backend's rate limit, we were able to retrieve at most the weekly search volume over the past 5 years for 5 keywords at a time. The weekly Google Trends of a total of 98 keywords were collected over the past 5 years.
@@ -14,7 +14,7 @@ $u = \log\left(\frac{\text{Hit}}{\text{Opt}}\right)$, $d = \log\left(\frac{\text
 
 $\sigma_t = 0.511 (u - d)^2 - 0.019 \left[c(u + d) - 2ud\right] - 0.383c^2$ (2)
 
-We obtained a Spearman's rank correlation of 0.7 from the two measures, suggesting a strong positive monotonic relationship. We used VIX as the measure for volatility in the following analysis
+We obtained a Spearman's rank correlation of 0.7 from the two measures, suggesting a strong positive monotonic relationship. We used VIX as the measure for volatility in the following analysis.
 
 ## Data Preprocessing
 Google Trends shows relative search frequency with a range between 0 to 100. Min-Max scaling is applied to the features to ensure that all values are within the same scale, typically between 0 and 1. We then create sequences for LSTM training. Each input sequence is a concatenation of feature values and VIX from the past n samples, with the corresponding VIX value from the next sample.
