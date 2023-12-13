@@ -69,8 +69,10 @@ The model is compiled using the Adam optimizer and Mean Squared Error (MSE) as t
 ![image](https://github.com/GeniusY12138/LSTM-Transformer/assets/110353222/80c13b1a-8315-42e7-bceb-5968f31a6c5f)
 
 **Model Evaluation:**
+```
 loss: 7.0208 - root_mean_squared_error: 2.6497 - mape: 13.7877
 Test MSE: [7.020784378051758, 2.6496763229370117, 13.78770923614502]
+```
 
 ## PCA + LSTM
 To refine the prediction model, we incorporated Principal Component Analysis (PCA) to identify and select the most influential features. After applying PCA, we selected the top 20 principal components (PCs) that exhibit the highest variance, providing a more concise representation of the input data.
@@ -82,8 +84,10 @@ To refine the prediction model, we incorporated Principal Component Analysis (PC
 ![image](https://github.com/GeniusY12138/LSTM-Transformer/assets/110353222/ab90c158-e773-4745-9129-a72ddb91d0f9)
 
 **Model Evaluation:**
+```
 loss: 8.8712 - root_mean_squared_error: 2.9785 - mape: 14.1179
 Test MSE: [8.871188163757324, 2.9784538745880127, 14.117850303649902]
+```
 
 ## Discussion
 
