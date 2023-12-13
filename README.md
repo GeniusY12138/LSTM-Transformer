@@ -80,6 +80,13 @@ Test MSE: [8.871188163757324, 2.9784538745880127, 14.117850303649902]
 ```
 
 ## Discussion
+While our approach to predicting stock volatility using LSTM and incorporating Google Search trends has shown some results, it is essential to acknowledge the limitations that impact the interpretation and generalization of our findings.
+
+1. **Lack of Sufficient Data**: The availability and quantity of data play a pivotal role in the accuracy of predictive models. In our case, the limited dataset due to Google's backend rate limit is not enough to fit the models well, especially for neural networks like LSTM, which typically require a large dataset to train. Expanding the dataset over a more extended period could enhance the model's predictive capabilities.
+
+2. **Missing Temporal Information**: We acknowledge that our dataset provides a weekly snapshot, overlooking daily fluctuations in search volumes. Acquiring daily data could provide a more detailed understanding of short-term volatility patterns and contribute to refining our predictions.
+
+3. **Insufficient Tuning**: Hyperparameter tuning is a crucial aspect of optimizing neural network models. Due to time limitations, we only used a baseline LSTM architecture without tuning. More extensive tuning could further improve the model performance.
 
 ## References
 Garman, M. B., & Klass, M. J. (1980). On the Estimation of Security Price Volatilities from Historical Data. The Journal of Business, 53(1), 67–78. http://www.jstor.org/stable/2352358
