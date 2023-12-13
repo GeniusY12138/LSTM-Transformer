@@ -1,7 +1,7 @@
 # Stock Volatility Prediction with Google Search Trends
 
 ## Overview
-This repository is a group project for QTM 347: Machine Learning at Emory University, in which we present a prediction framework for stock market volatility, specifically on the Volatility Index (VIX). Our analysis is based on 98 Google Search trends (Preis, 2013), to capture the collective sentiment and interest of market participants. The models employed include Ordinary Least Squares (OLS), Partial Least Squares (PLS), Ridge Regression, Lasso Regression, and Long Short-Term Memory (LSTM) networks. 
+This repository is a group project for QTM 347: Machine Learning at Emory University, and a replication and extension to Dr. Ruoxuan Xiong's 2015 paper "Deep Learning Stock Volatility with Google Domestic Trends". We present a prediction framework for stock market volatility, specifically on the Volatility Index (VIX). Our analysis is based on 98 Google Search trends (Preis, 2013), to capture the collective sentiment and interest of market participants. The models employed include Ordinary Least Squares (OLS), Partial Least Squares (PLS), Ridge Regression, Lasso Regression, and Long Short-Term Memory (LSTM) networks. 
 
 ## Data Collection
 Google Trends was collected through pytrends 4.9.2, which is an unofficial API for Google Trends. Google Trends provides daily search data for up to the last 90 days. For any longer periods, the data is only available weekly. Due to Google backend's rate limit, we were able to retrieve at most the weekly search volume over the past 5 years for 5 keywords at a time. The weekly Google Trends of a total of 98 keywords were collected over the past 5 years.
