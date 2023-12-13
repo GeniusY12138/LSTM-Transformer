@@ -23,16 +23,47 @@ The data is split into training and testing sets using the train_test_split func
 
 ![image](https://github.com/GeniusY12138/LSTM-Transformer/assets/110353222/a6e1fe26-62f7-4f03-aa1e-38f1acd0dbe0)
 
-
 ## Scheme Selection
 
 ## OLS model
+In optimizing our OLS model, a perfect R-squared value was observed, indicating that the model could explain all the variance in our target variable. Such a fit usually raises concerns about overfitting, especially since our model's degrees of freedom for residuals is zero—implying a model that might be too complex for future data. However, this was counterbalanced by outstanding performance metrics: a Log-Likelihood of 5722.4, with remarkably low AIC and BIC scores, suggesting model adequacy. Our test evaluation resulted in an MSE of 27.3418 and a MAPE of 24.0133%, demonstrating the model’s efficacy in making predictions, albeit with caution for potential overfitting due to the perfect R-squared.
+
+<img width="468" alt="image" src="https://github.com/GeniusY12138/LSTM-Transformer/assets/153700753/6a2631bd-f0f2-45c6-8c76-ce8011e6c6d9">
+
+```
+Test MSE for Least Square Model: 27.341832653325724
+Test MAPE for OLS Model: 24.0132852493724%
+```
 
 ## Ridge Regression
+In our refinement of the Ridge Regression model, cross-validation led us to an optimal regularization parameter (λ) of 0.688, striking a balance between complexity and predictive accuracy. This parameter choice was visualized through a pronounced minimum in the cross-validated MSE curve. The model, with this regularization strength, achieved a test MSE of 26.1464 and a MAPE of 27.7263%, indicating a robust predictive performance while effectively managing the bias-variance trade-off, crucial for maintaining the model's generalizability to new data.
+
+<img width="457" alt="image" src="https://github.com/GeniusY12138/LSTM-Transformer/assets/153700753/af463028-8a1d-4df3-b35a-5264a240e25e">
+
+```
+Test MSE for Ridge Regression Model: 26.14637086423418
+Test MAPE for Ridge Regression Model: 27.72629953324128%
+```
 
 ## Lasso Regression
+For our Lasso Regression model, the fine-tuning process led to an optimal alpha of 0.495, selected through a meticulous cross-validation approach aimed at minimizing overfitting and maximizing model parsimony. This optimal alpha facilitated the selection of the most informative features, ensuring that the model remains interpretable. The model's efficacy is highlighted by a test MSE of 10.308, which signifies a strong predictive accuracy, and a MAPE of 15.962%, indicating the model's predictions deviate from actual values by a modest margin. 
+
+<img width="461" alt="image" src="https://github.com/GeniusY12138/LSTM-Transformer/assets/153700753/e88196ae-b266-4e0b-a250-27ca8faa770b">
+
+```
+Test MSE for Lasso Regression Model: 10.30812601485335
+Test MAPE for Lasso Regression Model: 15.961538861972944%
+```
 
 ## PLS model
+To optimize the predictive accuracy of the Partial Least Squares (PLS) Regression model, we applied a methodical approach to pinpoint the optimal number of principal components, informed by the principle of parsimony. The analysis was steered by a marked reduction in cross-validated Mean Squared Error (MSE), which was observed to plateau after 7 components, as indicated by the model's performance graph. Settling on 7 components, a balance was struck between model complexity and predictive capability, yielding a test MSE of 28.876 and a MAPE of 27.918%, hence delivering a model that is both interpretable and computationally efficient for practical applications.
+
+<img width="461" alt="image" src="https://github.com/GeniusY12138/LSTM-Transformer/assets/153700753/542d15ba-6146-41a3-a872-5eb0a8e7ebe9">
+
+```
+Test MSE for PLS Model: 28.87638244546841
+Test MAPE for PLS Model: 27.918271292746038%
+```
 
 ## LSTM model
 This section introduces the Long Short-Term Memory (LSTM) model, implemented using TensorFlow and Keras in Python. Long Short-Term Memory (LSTM) is a variant of recurrent neural networks (RNNs), which excels at capturing temporal dependencies in sequential data—making them particularly well-suited for time series analysis.
