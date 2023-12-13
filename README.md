@@ -45,7 +45,7 @@ The data is split into training and testing sets using the train_test_split func
 ## PLS model
 
 ## LSTM model
-This section introduces the Long Short-Term Memory (LSTM) model, implemented using TensorFlow and Keras in Python.
+This section introduces the Long Short-Term Memory (LSTM) model, implemented using TensorFlow and Keras in Python. Long Short-Term Memory (LSTM) is a variant of recurrent neural networks (RNNs), which excels at capturing temporal dependencies in sequential data—making them particularly well-suited for time series analysis.
 
 We used a baseline LSTM model architecture as follows:
 
@@ -54,20 +54,36 @@ Model: "sequential"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
-lstm (LSTM)                  (None, 64)                42240     
+lstm (LSTM)                  (None, 64)                41984     
 _________________________________________________________________
 dense (Dense)                (None, 1)                 65        
 =================================================================
-Total params: 42305
-Trainable params: 42305
+Total params: 42049
+Trainable params: 42049
 Non-trainable params: 0
 ```
-The model is compiled using the Adam optimizer and Mean Squared Error (MSE) as the loss function. Additionally, the Root Mean Squared Error (RMSE) is used as a metric to monitor model performance during training. The training process includes early stopping to prevent overfitting. The training history is captured to monitor the model's performance over epochs.
-
+The model is compiled using the Adam optimizer and Mean Squared Error (MSE) as the loss function. Additionally, the Root Mean Squared Error (RMSE) and Mean Absolute Percentage Error (MAPE) are used as the evaluation metrics. The training process includes early stopping to prevent overfitting. The training history is captured to monitor the model's performance over epochs.
 
 ![image](https://github.com/GeniusY12138/LSTM-Transformer/assets/110353222/d864b740-d058-4616-9ffb-ae8dabd6d1aa)
 
 ![image](https://github.com/GeniusY12138/LSTM-Transformer/assets/110353222/80c13b1a-8315-42e7-bceb-5968f31a6c5f)
+
+**Model Evaluation:**
+loss: 7.0208 - root_mean_squared_error: 2.6497 - mape: 13.7877
+Test MSE: [7.020784378051758, 2.6496763229370117, 13.78770923614502]
+
+## PCA + LSTM
+To refine the prediction model, we incorporated Principal Component Analysis (PCA) to identify and select the most influential features. After applying PCA, we selected the top 20 principal components (PCs) that exhibit the highest variance, providing a more concise representation of the input data.
+
+![image](https://github.com/GeniusY12138/LSTM-Transformer/assets/110353222/8acccad6-4a81-4380-bd21-7f4b2fe56577)
+
+![image](https://github.com/GeniusY12138/LSTM-Transformer/assets/110353222/f8a36dc1-a4c6-4e77-b7ef-d51131f636fa)
+
+![image](https://github.com/GeniusY12138/LSTM-Transformer/assets/110353222/ab90c158-e773-4745-9129-a72ddb91d0f9)
+
+**Model Evaluation:**
+loss: 8.8712 - root_mean_squared_error: 2.9785 - mape: 14.1179
+Test MSE: [8.871188163757324, 2.9784538745880127, 14.117850303649902]
 
 ## Discussion
 
@@ -77,7 +93,6 @@ Garman, M. B., & Klass, M. J. (1980). On the Estimation of Security Price Volati
 Preis, T., Helen Susannah Moat, & H. Eugene Stanley. (2013). Quantifying Trading Behavior in Financial Markets Using Google Trends. Scientific Reports, 3(1). https://doi.org/10.1038/srep01684
 
 Xiong, R., Nichols, E., & Shen, Y. (n.d.). Deep Learning Stock Volatility with Google Domestic Trends. https://arxiv.org/pdf/1512.04916.pdf
-
 
 ## Contributors
 Max Cao, Zoe Ji, Kristen Li, Bowen You 
