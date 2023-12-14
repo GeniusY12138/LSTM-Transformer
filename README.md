@@ -119,6 +119,34 @@ loss: 8.8712 - root_mean_squared_error: 2.9785 - mape: 14.1179
 Test MSE: [8.871188163757324, 2.9784538745880127, 14.117850303649902]
 ```
 
+## Extended LSTM Model
+To explore the LSTM model, we also tried to extend the basic model:
+
+```plaintext
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ lstm (LSTM)                 (None, 6, 64)             42240     
+                                                                 
+ dropout (Dropout)           (None, 6, 64)             0         
+                                                                 
+ dense (Dense)               (None, 6, 10)             650       
+                                                                 
+ gru (GRU)                   (None, 10)                660       
+                                                                 
+ dropout_1 (Dropout)         (None, 10)                0         
+                                                                 
+ dense_1 (Dense)             (None, 1)                 11        
+                                                                 
+=================================================================
+Total params: 43561 (170.16 KB)
+Trainable params: 43561 (170.16 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+However, such an extension resulted in constant prediction.
+
 ## Discussion
 While our approach to predicting stock volatility using LSTM and incorporating Google Search trends has shown some results, it is essential to acknowledge the limitations that impact the interpretation and generalization of our findings.
 
