@@ -24,6 +24,8 @@ The data is split into training and testing sets using the train_test_split func
 ![image](https://github.com/GeniusY12138/LSTM-Transformer/assets/110353222/a6e1fe26-62f7-4f03-aa1e-38f1acd0dbe0)
 
 ## Scheme Selection
+Since the data we use for this project is time series data, an important consideration is how we aggregate information and how long in the past we take into account when making predictions about the future. To this end, we performed scheme selection on the time interval and the sliding window in order to maximize the mutual information we obtained.
+
 
 ## OLS model
 In optimizing our OLS model, a perfect R-squared value was observed, indicating that the model could explain all the variance in our target variable. Such a fit usually raises concerns about overfitting, especially since our model's degrees of freedom for residuals is zero—implying a model that might be too complex for future data. However, this was counterbalanced by outstanding performance metrics: a Log-Likelihood of 5722.4, with remarkably low AIC and BIC scores, suggesting model adequacy. Our test evaluation resulted in an MSE of 27.3418 and a MAPE of 24.0133%, demonstrating the model’s efficacy in making predictions, albeit with caution for potential overfitting due to the perfect R-squared.
