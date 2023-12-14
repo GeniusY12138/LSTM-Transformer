@@ -144,8 +144,13 @@ Total params: 43561 (170.16 KB)
 Trainable params: 43561 (170.16 KB)
 Non-trainable params: 0 (0.00 Byte)
 _________________________________________________________________
+```
 
 However, such an extension resulted in constant prediction.
+
+![](graphs/error1_constant_prediction.png)
+
+We used cross validation to tune some of the hyperparameters, including the activation function, the dropout rate, and the learning rate of the optimizer. However, we still arrived at the constant line, and it seemed that there was randomness involved in the process, as we were unable to replicate the result with the same set of hyperparameters. More work should be done to investigate the reason behind the disappointing performance of the extended LSTM model.
 
 ## Discussion
 While our approach to predicting stock volatility using LSTM and incorporating Google Search trends has shown some results, it is essential to acknowledge the limitations that impact the interpretation and generalization of our findings.
