@@ -26,6 +26,9 @@ The data is split into training and testing sets using the train_test_split func
 ## Scheme Selection
 Since the data we use for this project is time series data, an important consideration is how we aggregate information and how long in the past we take into account when making predictions about the future. To this end, we performed scheme selection on the time interval and the sliding window in order to maximize the mutual information we obtained.
 
+![](graphs/Mutual_information.png)
+
+Based on the resulting heatmap, the mutual information is maximized when each interval contains 5 or 6 days of data and the sliding window size is 1. This result may be due to the limited data we had of Google Trends, and if a much larger dataset was used, it is possible that a larger sliding window size would be more favorable, as there was an increasing trend at the top of the heatmap.
 
 ## OLS model
 In optimizing our OLS model, a perfect R-squared value was observed, indicating that the model could explain all the variance in our target variable. Such a fit usually raises concerns about overfitting, especially since our model's degrees of freedom for residuals is zero—implying a model that might be too complex for future data. However, this was counterbalanced by outstanding performance metrics: a Log-Likelihood of 5722.4, with remarkably low AIC and BIC scores, suggesting model adequacy. Our test evaluation resulted in an MSE of 27.3418 and a MAPE of 24.0133%, demonstrating the model’s efficacy in making predictions, albeit with caution for potential overfitting due to the perfect R-squared.
